@@ -1,7 +1,12 @@
 name: 'setup-hammerkit'
-description: 'Install hammerkit'
+description: 'Install hammerkit, the containerized build tool with incremental caching'
+inputs:
+  version:
+    description: 'hammerkit version to install: a version (1.7.0) or an npm dist-tag (latest, rc)'
+    required: false
+    default: 'latest'
 runs:
-  using: 'node12'
+  using: 'node24'
   main: 'index.js'
 branding:
   color: 'green'
