@@ -1,10 +1,15 @@
 name: 'setup-hammerkit'
-description: 'Install hammerkit, the containerized build tool with incremental caching'
+description: 'Install hammerkit, the containerized build tool with incremental caching, from its release binary'
 inputs:
   version:
-    description: 'hammerkit version to install: a version (1.7.0) or an npm dist-tag (latest, rc)'
+    description: 'hammerkit version to install: a version (2.0.0) or an npm dist-tag (latest, next)'
     required: false
     default: 'latest'
+outputs:
+  version:
+    description: 'The hammerkit version put on PATH, with a dist-tag resolved (next → 2.1.0-next.6)'
+  cache-hit:
+    description: 'true if the binary came from the runner''s tool cache instead of a download'
 runs:
   using: 'node24'
   main: 'index.js'
